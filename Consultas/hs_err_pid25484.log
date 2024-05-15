@@ -1,0 +1,165 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=25484, tid=0x0000000000001cb0
+#
+# JRE version:  (8.0_372-b07) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.372-b07 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001ba3d412800):  JavaThread "Unknown thread" [_thread_in_vm, id=7344, stack(0x000000532d700000,0x000000532d800000)]
+
+Stack: [0x000000532d700000,0x000000532d800000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x000001ba3d412800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=7344, stack(0x000000532d700000,0x000000532d800000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000006c9400000, size: 3948 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 74240K, used 1280K [0x000000076dc00000, 0x0000000772e80000, 0x00000007c0000000)
+  eden space 64000K, 2% used [0x000000076dc00000,0x000000076dd40010,0x0000000771a80000)
+  from space 10240K, 0% used [0x0000000772480000,0x0000000772480000,0x0000000772e80000)
+  to   space 10240K, 0% used [0x0000000771a80000,0x0000000771a80000,0x0000000772480000)
+ ParOldGen       total 169472K, used 0K [0x00000006c9400000, 0x00000006d3980000, 0x000000076dc00000)
+  object space 169472K, 0% used [0x00000006c9400000,0x00000006c9400000,0x00000006d3980000)
+ Metaspace       used 779K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 76K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x000001ba4e120000,0x000001ba4e8e0000] byte_map_base: 0x000001ba4aad6000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006f9df810
+ Begin Bits: [0x000001ba4ee10000, 0x000001ba52bc0000)
+ End Bits:   [0x000001ba52bc0000, 0x000001ba56970000)
+
+Polling page: 0x000001ba3d580000
+
+CodeCache: size=245760Kb used=327Kb max_used=327Kb free=245432Kb
+ bounds [0x000001ba3ed60000, 0x000001ba3efd0000, 0x000001ba4dd60000]
+ total_blobs=56 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.017 loading class java/lang/Short
+Event: 0.017 loading class java/lang/Short done
+Event: 0.017 loading class java/lang/Integer
+Event: 0.017 loading class java/lang/Integer done
+Event: 0.017 loading class java/lang/Long
+Event: 0.017 loading class java/lang/Long done
+Event: 0.017 loading class java/lang/NullPointerException
+Event: 0.017 loading class java/lang/NullPointerException done
+Event: 0.017 loading class java/lang/ArithmeticException
+Event: 0.017 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff63a610000 - 0x00007ff63a655000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\bin\java.exe
+0x00007ff9f1d70000 - 0x00007ff9f1f86000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff9f15c0000 - 0x00007ff9f1684000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff9ef180000 - 0x00007ff9ef527000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9f0690000 - 0x00007ff9f0742000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff9f0530000 - 0x00007ff9f05d7000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff9f17e0000 - 0x00007ff9f1888000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff9ef6c0000 - 0x00007ff9ef6e8000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ff9efce0000 - 0x00007ff9efdf5000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff9f01a0000 - 0x00007ff9f034e000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff9ef090000 - 0x00007ff9ef0b6000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9f0d30000 - 0x00007ff9f0d59000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff9ef980000 - 0x00007ff9efa99000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff9ef5a0000 - 0x00007ff9ef63a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff9ef6f0000 - 0x00007ff9ef801000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff9e0910000 - 0x00007ff9e0ba3000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3235_none_270f74e173860f98\COMCTL32.dll
+0x00007ff9f17a0000 - 0x00007ff9f17d1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff9ea390000 - 0x00007ff9ea3a5000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\vcruntime140.dll
+0x00007ff9ac010000 - 0x00007ff9ac0ab000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\msvcp140.dll
+0x000000006f200000 - 0x000000006fa58000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\server\jvm.dll
+0x00007ff9efe00000 - 0x00007ff9efe08000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff9e4930000 - 0x00007ff9e493a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff9e1f20000 - 0x00007ff9e1f29000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff9e80c0000 - 0x00007ff9e80f4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9f0b40000 - 0x00007ff9f0bb1000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9ee0a0000 - 0x00007ff9ee0b8000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff9e8f80000 - 0x00007ff9e8f90000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\verify.dll
+0x00007ff9d5ea0000 - 0x00007ff9d5ecb000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\java.dll
+0x00007ff9d5b60000 - 0x00007ff9d5b90000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\instrument.dll
+0x00007ff9d5900000 - 0x00007ff9d5918000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\lib\idea_rt.jar=60633:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\bin -Dfile.encoding=UTF-8 
+java_command: Cliente
+java_class_path (initial): C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\charsets.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\cldrdata.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\dnsns.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\jaccess.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\localedata.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\nashorn.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\sunec.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\sunmscapi.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\zipfs.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\jce.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\jfr.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\jsse.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\management-agent.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\resources.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\rt.jar;C:\DIGITAL_HOUSE\BIMESTRE 5\BACKEND I\Consultas\out\production\Consultas;C:\DIGITAL_HOUSE\BIMESTRE 5\Recursos\h2-2.2.224.jar;C:\DIGITAL_HOUSE\BIMESTRE 5\Recursos\log4j-1.2.17.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\lib\idea_rt.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.12
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft\jdk-11.0.20.8-hotspot\bin;C:\Program Files\Eclipse Adoptium\jdk-11.0.19.7-hotspot\bin;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\bin;C:\Program Files\Common Files\Siemens\Automation\Simatic OAM\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_291\bin;C:\WINDOWS\system32;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Users\luchi\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Java\jdk-11.0.12\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\dotnet\;C:\Users\luchi\.pyenv\pyenv-win\bin;C:\Users\luchi\.pyenv\pyenv-win\shims;C:\Users\luchi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\luchi\AppData\Local\Programs\Python\Python311\;C:\Users\luchi\AppData\Local\Microsoft\WindowsApps;C:\Users\luchi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\luchi\AppData\Local\GitHubDesktop\bin;C:\Users\luchi\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Tools\Gradle\gradle-5.1-bin\gradle-5.1\bin;C:\Users\luchi\AppData\Roaming\npm;;C:\Users\luchi\AppData\Local\Programs\oh-my-posh\bin;C:\Users\luchi\.dotnet\tools
+USERNAME=luchi
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 11 , 64 bit Build 22621 (10.0.22621.3374)
+
+CPU:total 16 (initial active 16) (16 cores per cpu, 1 threads per core) family 23 model 96 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv, bmi1
+
+Memory: 4k page, physical 16169824k(5991436k free), swap 20364128k(5704k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.372-b07) for windows-amd64 JRE (1.8.0_372-b07), built on Apr 19 2023 08:59:36 by "jenkins" with MS VC++ 15.9 (VS2017)
+
+time: Tue May 14 18:24:14 2024
+timezone: Hora est. Pacífico, Sudamérica
+elapsed time: 0.021018 seconds (0d 0h 0m 0s)
+
